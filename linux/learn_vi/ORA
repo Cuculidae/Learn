@@ -1,0 +1,3 @@
+ORA publishes great books.
+ORA is my favorite publisher.
+1,$s/ORA/O'reilly \& Associates/g

@@ -1,0 +1,14 @@
+Bulk_quote.o: Bulk_quote.cpp Bulk_quote.hpp
+	g++ -c Bulk_quote.cpp -std=c++11
+print_total: print_total.cpp Bulk_quote.o
+	g++ -o print_total print_total.cpp Bulk_quote.o -std=c++11
+override.o: override.cpp
+	g++ -c override.cpp -std=c++11
+final.o: final.cpp
+	g++ -c final.cpp -std=c++11
+protected.o: protected.cpp
+	g++ -c protected.cpp
+friend.o: friend.cpp
+	g++ -c friend.cpp
+name_looup: namelooup.cpp
+	g++ -o name_lookup name_lookup.cpp

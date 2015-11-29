@@ -1,0 +1,22 @@
+shared_ptr: shared_ptr.cpp
+	g++ -o shared_ptr shared_ptr.cpp -std=c++11
+StrBlob: StrBlob.cpp
+	g++ -c StrBlob.cpp -std=c++11
+test_strblob: test_strblob.cpp
+	g++ -o test_strblob test_strblob.cpp -std=c++11
+new: new.cpp
+	g++ -o new new.cpp -std=c++11
+unique_ptr: unique_ptr.cpp
+	g++ -o unique_ptr unique_ptr.cpp -std=c++11
+weak_ptr: weak_ptr.cpp
+	g++ -o weak_ptr weak_ptr.cpp -std=c++11
+StrBlobPtr.o: StrBlobPtr.hpp StrBlobPtr.cpp 
+	g++ -c StrBlobPtr.cpp -std=c++11
+allocator: allocator.cpp
+	g++ -o allocator allocator.cpp -std=c++11
+runQueries: runQueries.cpp TextQuery.o QueryResult.o
+	g++ -o runQueries runQueries.cpp TextQuery.o QueryResult.o -std=c++11
+TextQuery.o: TextQuery.hpp TextQuery.cpp 
+	g++ -c TextQuery.cpp  -std=c++11
+QueryResult.o: QueryResult.hpp QueryResult.cpp
+	g++ -c QueryResult.cpp -std=c++11

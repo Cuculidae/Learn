@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# The exit command causes the script to exit with exit code n. If you use it at
+# the command prompt of any interactive shell, it will log you out. If you allow
+# your script to exit without specifying an exit status, then the status of the
+# last command executed in the script is used as the return value. It's always
+# good practice to supply an exit code.
+
+[ -f .profile ] && exit 0 || exit 1

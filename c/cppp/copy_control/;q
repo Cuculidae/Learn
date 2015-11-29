@@ -1,0 +1,25 @@
+/**
+ * rref.cpp
+ * C++11 rvalue reference.
+ * Compilation: g++ -o rref rref.cpp -std=c++11
+ * Created: 2015-11-05
+ */
+
+#include <iostream>
+
+using std::cout;
+using std::endl;
+
+int main()
+{
+    int i = 0;
+    int &r1 = i;
+    cout << "i = " << i << ", r1 = " << r << endl;
+    int &&rr1 = 1;
+    cout << "rr1 = " << rr1 << endl;
+  //int &&rr2 = rr;
+    int &r2 = rr1;
+    cout << "r2 = " << r2 << endl;
+
+    return 0;
+}

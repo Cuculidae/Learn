@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# The export command makes the variables named as its parameter available in
+# subshells. By default, variables created in a shell are not available in
+# further shells invoke from that shell. The export command creates an
+# environment variable from its parameter that can be seen by other scripts and
+# programs invoked from the current program. More technically, the exported
+# variables form the environment variables in any child processes derived from
+# the shell.
+
+foo="The first mata-syntactic variable"
+export bar="The second meta-syntactic variable"
+
+./export2

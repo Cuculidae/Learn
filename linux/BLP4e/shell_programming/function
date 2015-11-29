@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# To define a shell function, simply write its name followed by empty
+# parentheses and enclose the statements in braces:
+# function_name () {
+#   statements
+# }
+
+# You must first define a function before you can invoke it.
+
+# When a function is invoked, the positional parameters to the script, $*, $@,
+# $1, $2 and so on, are replaced by the parameters to the function. That's how
+# you read the parameters passed to the function. When the function finishes,
+# they are restored to their previous values.
+
+# You can make functions return numeric values using the return command.
+
+# In the absence of a return command specifying a return value, a function
+# returns the exit status of the last command executed.
+
+foo() {
+    echo "Function foo is executing"
+}
+
+echo "script starting"
+foo
+echo "script ended"
+
+exit 0

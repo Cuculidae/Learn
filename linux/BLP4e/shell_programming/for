@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Use the for construct to loop through a range of values, which can be any set
+# of strings. They could be simply listed in the program or, more commonly, the
+# result of a shell expansion of filenames.
+
+# for variable in values
+# do
+#   statements
+# done
+
+for foo in bar fud 43
+do
+    echo $foo
+done
+
+exit 0

@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# case variable in 
+#   pattern [ | pattern ] ...) statements;;
+#   pattern [ | pattern ] ...) statements;;
+#   ...
+# esac
+#
+# Notice that each pattern line is terminated with double semicolons(;;). You
+# can put multiple statements between each pattern and the next, so a double
+# semicolon is needed to mark where one statement ends and the next pattern
+# begins.
+
+# Note that the ;; before esac is optional
+
+
+echo "Is it morning? Please answer yes or no"
+read timeofday
+
+case "$timeofday" in
+    [yY] | [Yy][Ee][Ss] )
+        echo "Good Morning"
+        echo "Up bright and early this morning"
+        ;;
+    [nN]* )
+        echo "Good afternoon"
+        ;;
+    *)
+        echo "Sorry, answer not recognized"
+        echo "Please answer yes or no"
+        exit 1
+        ;;
+esac
+
+exit 0

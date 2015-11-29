@@ -1,0 +1,6 @@
+detach: detach.cpp
+	g++ -o $@ $@.cpp -std=c++11
+join: join.cpp
+	g++ -o $@ $@.cpp -std=c++11
+joinable: joinable.cpp
+	g++ -o $@ $@.cpp -std=c++11

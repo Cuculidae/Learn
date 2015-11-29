@@ -1,0 +1,60 @@
+#!/bin/sh
+
+# The trap command is used to specify the actions to take on receipt of signals,
+# which you'll meet in more detail later in the book. A common use is to tidy up
+# a script when it is interrupted. Historically, shells always used the numbers
+# for signals, but new scripts should use names taken from the #include file
+# signal.h, with SIG prefix omitted. To see the signal numbers and associated
+# names, you can just type trap -l at a command prompt.
+#
+# The trap command is passed the action to take, followed by the signal name (or
+# names) to trap on:
+#   trap command signal
+#
+# To reset a trap condition to the default, simply specify the command as -. To
+# ignore a signal, set the command to the empty string ''. A trap command with
+# no parameters prints out the current list of traps or actions.
+
+# The following table lists the more important signals covered by the X/Open
+# standard that can be caught.
+# ------------------------------------------------------------------------------
+# HUP   Hang up; usually sent when a terminal goes offline, or a user log out
+# ------------------------------------------------------------------------------
+# INT   Interrupt; usually sent by pressing Ctrl+C
+# ------------------------------------------------------------------------------
+# QUIT  Quit; usually sent by pressing Ctrl+\
+# ------------------------------------------------------------------------------
+# ABRT  Abort; usually sent on some serious execution error
+# ------------------------------------------------------------------------------
+# ALRM  Alarm; usually used for handling timeouts
+# ------------------------------------------------------------------------------
+# TERM  Terminate; usually sent by the system when it's shutting down
+# ------------------------------------------------------------------------------
+
+
+trap 'rm -f /tmp/my_tmp_file_$$' INT
+echo creating file /tmp/my_tmp_file_$$
+date > /tmp/my_tmp_file_$$
+
+echo "press interrupt (CTRL-C) to interrupt ..."
+while [ -f /tmp/my_tmp_file_$$ ]; do
+    echo File exists
+    sleep 1
+done
+echo The file no longer exists
+
+trap - INT
+echo creating file /tmp/my_tmp_file_$$
+date > /tmp/my_tmp_file_$$
+# In the shell, you can also find out the program state wherever it exits by
+# trapping the EXIT signal with a line something like the following 
+trap 'echo trap EXIT' EXIT
+
+echo "press interrupt (CTRL-C) to interrupt ..."
+while [ -f /tmp/my_tmp_file_$$ ]; do
+    echo File exists
+    sleep 1
+done
+
+echo we never get here
+exit 0

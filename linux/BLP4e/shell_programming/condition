@@ -1,0 +1,77 @@
+#!/bin/sh
+
+# A shell script can test the exit code of any command that can be invoked from
+# the command line, including the scripts that you have written yourself. That's
+# why it's important to always include an exit command with a value at the end
+# of any scripts that you write.
+
+# Note that you must put spaces between the [ braces and the condition being
+# checked. You can remember this by remembering that [ is just the same as
+# writing test, and you would always leave a space after the test command.
+# If you are putting then on the same line as if, you must add a semicolon to
+# separate the test from the then.
+
+# The condition types that you can use with the test command fall into three
+# types: string comparision, arithmetic comparision, and file conditionals.
+#
+# ------------------------------------------------------------------------------
+# string1 = string2     True if the strings are equal
+# ------------------------------------------------------------------------------
+# string1 != string2    True if the strings are not equal
+# ------------------------------------------------------------------------------
+# -n string             True if the stirng is not null
+# ------------------------------------------------------------------------------
+# -z string             True if the string is null (an empty string)
+# ------------------------------------------------------------------------------
+#
+# ------------------------------------------------------------------------------
+# expr1 -eq expr2       True if the expressions are equal
+# ------------------------------------------------------------------------------
+# expr1 -ne expr2       True if the expressions are not equal
+# ------------------------------------------------------------------------------
+# expr1 -gt expr2       True if expr1 is greater than expr2
+# ------------------------------------------------------------------------------
+# expr1 -ge expr2       True if expr1 is greater than or equal to expr2
+# ------------------------------------------------------------------------------
+# expr1 -lt expr2       True if expr1 is less than expr2
+# ------------------------------------------------------------------------------
+# expr1 -le expr2       True if expr1 is less than or equal to expr2
+# ------------------------------------------------------------------------------
+# ! expr                True if the expression is false, and vice versa
+# ------------------------------------------------------------------------------
+#
+# ------------------------------------------------------------------------------
+# -d file               True if the file is a directory
+# ------------------------------------------------------------------------------
+# -e file               True if the the file exists. Note that historically the
+#                       -e option has not been portable, so -f is usually used.
+# ------------------------------------------------------------------------------
+# -f file               True if the file is a regular file
+# ------------------------------------------------------------------------------
+# -g file               True if set-group-id is set on file
+# ------------------------------------------------------------------------------
+# -r file               True if the file is readable
+# ------------------------------------------------------------------------------
+# -s file               True if the file has nonzero size
+# ------------------------------------------------------------------------------
+# -u file               True if set-user-id is set on file
+# ------------------------------------------------------------------------------
+# -w file               True if the file is writable
+# ------------------------------------------------------------------------------
+# -x file               True if the file executable
+# ------------------------------------------------------------------------------
+
+# Before the test can be true, all the file conditional tests require that the
+# file also exists.
+
+if [ -f /bin/bash ]
+then
+    echo "file /bin/bash exists"
+fi
+
+if [ -d /bin/bash ]
+then
+    echo "/bin/bash is a directory"
+else
+    echo "/bin/bash is NOT a directory"
+fi

@@ -1,0 +1,56 @@
+find: find.cpp
+	g++ -o find find.cpp -std=c++11
+accumulate: accumulate.cpp
+	g++ -o accumulate accumulate.cpp -std=c++11
+equal: equal.cpp
+	g++ -o equal equal.cpp -std=c++11
+count: count.cpp
+	g++ -o count count.cpp -std=c++11
+fill: fill.cpp
+	g++ -o fill fill.cpp -std=c++11
+fill_n: fill_n.cpp
+	g++ -o fill_n fill_n.cpp -std=c++11
+back_inserter: back_inserter.cpp
+	g++ -o back_inserter back_inserter.cpp -std=c++11
+copy: copy.cpp
+	g++ -o copy copy.cpp -std=c++11
+replace: replace.cpp
+	g++ -o replace replace.cpp -std=c++11
+replace_copy: replace_copy.cpp
+	g++ -o replace_copy replace_copy.cpp -std=c++11
+elimDups: elimDups.cpp
+	g++ -o elimDups elimDups.cpp -std=c++11
+stable_sort: stable_sort.cpp
+	g++ -o stable_sort stable_sort.cpp -std=c++11
+partition: partition.cpp
+	g++ -o partition partition.cpp -std=c++11
+count_if: count_if.cpp
+	g++ -o count_if count_if.cpp -std=c++11
+lambda: lambda.cpp
+	g++ -o lambda lambda.cpp -std=c++11
+transform: transform.cpp
+	g++ -o transform transform.cpp -std=c++11
+bind: bind.cpp
+	g++ -o bind bind.cpp -std=c++11
+inserter: inserter.cpp
+	g++ -o inserter inserter.cpp -std=c++11
+istream_iterator: istream_iterator.cpp
+	g++ -o istream_iterator istream_iterator.cpp -std=c++11
+ostream_iterator: ostream_iterator.cpp
+	g++ -o ostream_iterator ostream_iterator.cpp -std=c++11
+unique: unique.cpp
+	g++ -o unique unique.cpp -std=c++11
+unique_copy: unique_copy.cpp
+	g++ -o unique_copy unique_copy.cpp -std=c++11
+bookstore: bookstore.cpp
+	g++ -o bookstore bookstore.cpp -std=c++11
+reverse_iterator: reverse_iterator.cpp
+	g++ -o reverse_iterator reverse_iterator.cpp -std=c++11
+reverse: reverse.cpp
+	g++ -o reverse reverse.cpp -std=c++11
+remove: remove.cpp
+	g++ -o remove remove.cpp -std=c++11
+remove_if: remove_if.cpp
+	g++ -o remove_if remove_if.cpp -std=c++11
+remove_copy_if: remove_copy_if.cpp
+	g++ -o remove_copy_if remove_copy_if.cpp -std=c++11

@@ -1,0 +1,24 @@
+test_Blob: test_Blob.cpp
+	g++ -o test_Blob test_Blob.cpp -std=c++11
+alias: alias.cpp
+	g++ -o alias alias.cpp -std=c++11
+static: static.cpp
+	g++ -o static static.cpp -std=c++11
+test_compare: test_compare.cpp
+	g++ -o test_compare test_compare.cpp -std=c++11
+application: application.cpp templateBuild.o 
+	g++ -o application application.cpp templateBuild.o -std=c++11
+templateBuild.o: templateBuild.cpp templateBuild.hpp Blob.hpp compare.hpp
+	g++ -c templateBuild.cpp -std=c++11
+print: print.cpp
+	g++ -o print print.cpp -std=c++11
+beginend: beginend.cpp
+	g++ -o beginend beginend.cpp -std=c++11
+parameter: parameter.cpp Sales_data.o
+	g++ -o parameter parameter.cpp Sales_data.o -std=c++11
+Sales_data.o: Sales_data.cpp Sales_data.hpp
+	g++ -c Sales_data.cpp -std=c++11
+test_DebugDelete: test_DebugDelete.cpp DebugDelete.hpp
+	g++ -o test_DebugDelete test_DebugDelete.cpp p -std=c++11
+argument_deduction: argument_deduction.cpp
+	g++ -o argument_deduction argument_deduction.cpp -std=c++11

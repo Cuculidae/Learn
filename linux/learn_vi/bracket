@@ -1,0 +1,4 @@
+if ( cos(a[i]) > sin(b[i]+c[i]))
+{
+    printf("cos and sin equal!\n");
+}

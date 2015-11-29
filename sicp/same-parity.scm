@@ -1,0 +1,8 @@
+(define (same-parity x . y)
+	(let ((p (remainder x 2)))
+		(define (collect l)
+			(cond ((null? l) (list))
+				  ((= p (remainder (car l) 2))
+				  	(cons (car l) (collect (cdr l))))
+				  (else (collect (cdr l)))))
+	(cons x (collect y))))

@@ -1,0 +1,12 @@
+Sales_data.o: Sales_data.cpp Sales_data.hpp
+	g++ -c Sales_data.cpp -std=c++11
+bookstore: bookstore.cpp Sales_data.o
+	g++ -o bookstore bookstore.cpp Sales_data.cpp -std=c++11
+call: call.cpp Sales_data.o
+	g++ -o call call.cpp Sales_data.o -std=c++11
+absInt: absInt.cpp
+	g++ -o absInt absInt.cpp
+PrintString: PrintString.cpp
+	g++ -o PrintString PrintString.cpp -std=c++11
+function: function.cpp
+	g++ -o function function.cpp -std=c++11

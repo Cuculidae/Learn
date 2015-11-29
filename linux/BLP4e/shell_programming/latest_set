@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# The doe (.) command executes the command in the current shell.
+
+# Normally, when a script executes an external command or script, a new
+# environment (a subshell) is created, the command is executed in the new
+# environment, and the environment is then discarded apart from the exit code
+# taht is returned to the parent shell. However, the external source and the dot
+# command (two more synonyms) run the commands listed in a script in the same
+# shell that called the script.
+
+# Because, by default, a new environment is created when a shell script is
+# executed, any changes to environment variables that the script makes are lost.
+# The dot command, on the other hand, allows the executed script to change the
+# current environment.
+
+version=latest
+PATH=/usr/local/new_bin:/usr/bin:/bin:.
+PS1="latest version> "

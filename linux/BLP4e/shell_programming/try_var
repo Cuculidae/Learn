@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# When a shell script starts, some variables are initialized from values in the
+# environment. These are normally in all uppercase form to distinguish them from
+# user-defined (shell) variables in scripts, which are conventionally lowercase.
+# $IFS      An input field separator. This is a list of characters that are used
+#           to separate words when the shell is reading input, usually space,
+#           tab, and newline characters.
+# $0        The name the shell script
+# $#        The number of parameters passed
+# $$        The process ID of the shell script, often used inside a script for
+#           generating unique temporary filenames; 
+#
+#
+# If you script is invoked with parameters, some additional variables are
+# created. If no parameters are passed, the environment variable $# still exists
+# but has a value of 0.
+#
+# $1, $2, ...   The parameters given to the script
+# $*            A list of all parameters, in a single variable, separated by the
+#               first character in the environment variable IFS. If IFS is
+#               modified, then the way $* separates the command line into
+#               parameters will change.
+# $@            A subtle variation on $*; it doesn't use the IFS environment
+#               variable, so parameters are not run together even if IFS is
+#               empty.
+#
+# In general, if you want access to the parameters, $@ is the sensible choice.
+
+salutation="Hello"
+echo $salutation
+echo "The program $0 is now running"
+echo "The second parameter was $2"
+echo "The first parameter was $1"
+echo "The parameter list was $*"
+echo "The user's home directory is $HOME"
+echo "Please enter a new greeting"
+read salutation
+
+echo $salutation
+echo "The script is now complete"
+exit 0

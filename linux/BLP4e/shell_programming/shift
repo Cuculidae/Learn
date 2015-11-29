@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# The shift command moves all the parameter variables down by one. The previous
+# value of $1 is discarded, while $0 remains unchanged. If a numerical parameter
+# is specified in the call to shift, the parameters move that many spaces. The
+# other variables, $*, $@, and $#, are also modified in line with the new
+# arrangement of parameter variables.
+
+while [ "$1" != "" ]; do
+    echo "$1"
+    shift
+done
+
+exit 0

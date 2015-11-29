@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# The set command sets the parameter variables for the shell. It can be a
+# useful way of using fields in commands that output space-separated values.
+
+# This program sets the parameter list to the date command's output and then
+# uses the positional parameter $2 to get the month
+echo the data is $(date)
+set $(date)
+echo The month is $2
+
+exit 0

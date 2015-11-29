@@ -1,0 +1,8 @@
+ate: ate.cpp
+	g++ -o ate ate.cpp
+app: app.cpp
+	g++ -o app app.cpp
+istring: istring.cpp
+	g++ -o istring istring.cpp
+ostring: ostring.cpp
+	g++ -o ostring ostring.cpp

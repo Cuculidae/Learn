@@ -1,0 +1,18 @@
+#!/bin/sh
+
+echo "Is it morning? Please answer yes or no"
+read timeofday
+
+# A subtle problem is lurking hear.
+# Try this script, but just press Enter (or Return on some keyboards), rather
+# than answering the question. You'll get this error message:
+# [: =: unary operator expected
+# To avoid this, you must use quotes around the variable
+# if [ "$timeofday" = "yes" ]
+if [ $timeofday = "yes" ]; then
+    echo "Good morning"
+else
+    echo "Good afternoon"
+fi
+
+exit 0

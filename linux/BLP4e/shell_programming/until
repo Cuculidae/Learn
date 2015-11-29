@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# until condition
+# do
+#   statements
+# done
+
+# This is very similar to the while loop, but with the condition test reversed.
+# In other words, the loop continues until the condition becomes true, not while
+# the condition is true.
+
+until who | grep "$1" > /dev/null
+do
+    sleep 60
+done
+
+# now ring the bell and announce the expected user.
+
+echo -e '\a'
+echo "*** $1 has just logged in ***"
+
+exit 0
